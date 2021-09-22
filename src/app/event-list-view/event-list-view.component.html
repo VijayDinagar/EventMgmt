@@ -1,0 +1,5 @@
+<button (click)="onCreate()">Create Event</button>
+<ul>
+    <li *ngFor="let event of events$ | async">{{event.event_name}}<span><button (click)="onEdit(event)">Edit</button>
+        <button (click)="onDelete(event)">Delete</button></span></li>
+</ul>

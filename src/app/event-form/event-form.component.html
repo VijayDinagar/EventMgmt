@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>{{title}}</legend>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="name">Event Name</label>
+    <app-input-text [control]="form.get('event_name')"></app-input-text>
+    <label for="organizer">Event Organizer</label>
+    <app-input-text [control]="form.get('event_organizer')"></app-input-text>
+    <label for="place">Event Place</label>
+    <app-input-text [control]="form.get('event_place')"></app-input-text>
+    <label for="datetime">Event Date Time</label>
+    <app-input-time [control]="form.get('event_date')"></app-input-time>
+    <label for="duration">Event Duration</label>
+    <app-input-duration [control]="form.get('event_duration')"></app-input-duration>
+    <mat-divider></mat-divider>
+    <input type="submit" value="Submit">
+    <input type="button" value="Cancel" (click)="onCancel()">
+  </form>
+</fieldset>
+
