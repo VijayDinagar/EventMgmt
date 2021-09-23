@@ -12,8 +12,10 @@
     <label for="duration">Event Duration</label>
     <app-input-duration [control]="form.get('event_duration')"></app-input-duration>
     <mat-divider></mat-divider>
-    <input type="submit" value="Submit">
-    <input type="button" value="Cancel" (click)="onCancel()">
+    <div class="div-button">
+      <button style="margin-right: 10px;" mat-raised-button color="primary" type="submit">Submit</button>
+      <button mat-raised-button (click)="onCancel()">Cancel</button>
+    </div>
   </form>
 </fieldset>
 
