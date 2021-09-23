@@ -1,28 +1,5 @@
-<button class="create-button" mat-raised-button (click)="onCreate()">Create Event</button>
-<mat-divider></mat-divider>
-
-<mat-card class="example-card" *ngFor="let event of events$ | async">
-    <div class="outside-div">
-        <div class="left-div">
-            <h1>{{event.event_date | date: 'dd'}}</h1>
-            <h2>{{event.event_date | date: 'MMM yyyy'}}</h2>
-            <h3>{{event.event_date | date: 'shortTime'}}</h3>
-        </div>
-        <div class="right-div">
-            <mat-card-header>
-                <mat-card-title>{{event.event_name}}</mat-card-title>
-                <mat-card-subtitle>{{event.event_organizer}}</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  {{event.event_place}}
-                </p>
-                <mat-card-actions style="float:right;">
-                  <button mat-raised-button (click)="onEdit(event)">Edit</button>
-                  <button mat-raised-button (click)="onDelete(event)">Delete</button>
-                </mat-card-actions>
-              </mat-card-content>
-        </div>
-    </div>
-
-  </mat-card>
+<button (click)="onCreate()">Create Event</button>
+<ul>
+    <li *ngFor="let event of events$ | async">{{event.event_name}}<span><button (click)="onEdit(event)">Edit</button>
+        <button (click)="onDelete(event)">Delete</button></span></li>
+</ul>

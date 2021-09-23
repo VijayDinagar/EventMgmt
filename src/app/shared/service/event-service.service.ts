@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { URL_FOR_EVENT_MGMT } from '../constants/constants';
 import { HttpClient } from '@angular/common/http';
-import { of, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 
 export interface IEventDetails {
@@ -28,10 +27,7 @@ export class EventServiceService {
   }
 
   getAllEvents() {
-    return this.httpService.get<IEventDetails[]>(URL_FOR_EVENT_MGMT).pipe(map(res => {
-      console.log(res);
-      return res;
-    }));
+    return this.httpService.get<IEventDetails[]>(URL_FOR_EVENT_MGMT);
   }
 
   getEventById(id: string) {
